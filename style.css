@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff7613;
+    --text-color: #727171;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.tittle {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    line-height: 4rem;
+}
+
+.profile-img img {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    padding: 5rem;
+    background-color: #070707;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 4rem;
+}
+.group3 > div{
+    flex: 1;
+}
+/* Group 3 is for contact and social sections */
+.group3 {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    grid-column: 1 / -1; /* Ensure it spans across the columns */
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.social {
+    order: 2; /* Ensure social section comes after group2 */
+}
+
+/* On smaller screens */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    /* Make the profile section span across the full width */
+    .profile {
+        grid-column: 1 / -1; 
+        margin-bottom: 2rem;
+    }
+
+    .profile-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center content */
+        gap: 1rem; /* Adjust the gap between the image and text */
+    }
+
+    .profile-details {
+        width: 100%; /* Ensure the text content spans the full width */
+        text-align: center; /* Center text content */
+    }
+
+    .profile-name {
+        font-size: 36px; /* Adjust font size for smaller screens */
+    }
+
+    .profile-title {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .description {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .download-btn {
+        font-size: 15px;
+    }
+
+    .group3 {
+        flex-direction: column; /* Stack the items vertically on small screens */
+    }
+
+    .social {
+        order: 2; /* Ensure social section appears after group2 */
+    }
+}
+
+/* Profile section style */
+.profile {
+    grid-column: 1 / -1; /* Make profile section span across both columns */
+    margin-bottom: 2rem;
+}
+
+.profile-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Align the image and text side by side */
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column; /* Stack text content vertically */
+}
+
+.profile-name {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.profile-title {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-top: 1rem;
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 16px;
+    line-height: 1.8rem;
+}
+
+
+.download-btn {
+    text-decoration: underline;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    color: var(--primary-color);
+}
+
+/* Skill List Styling */
+.skill-list {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+.ref-name {
+    margin: 1rem 0;
+}
+
+.ref-item p {
+    line-height: 1.5rem;
+}
+
+.contact-item {
+    line-height: 3rem;
+}
+
+.social-item i {
+    width: 30px;  /* Size of icons */
+    height: 30px; /* Size of icons */
+    color: #fff;  /* Icon color */
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-item a {
+    text-decoration: none;
+}
+
+.social-items {
+    margin-top: 2rem;
+}
+
+.social-item {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.social-item:hover {
+    color: var(--primary-color);
+}
+
+.social-item svg {
+    width: 2rem;
+}
+hr{
+    grid-column: 1/-1;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-top: 2px solid rgba(128, 128, 128, 0.288);
+}

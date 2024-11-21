@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
+    <!-- Updated html2canvas library (version 0.4.2) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.2/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="cv.jpg" alt="Shakthivishwa">
+                </div>
+                <div class="profile-details">
+                    <h1 class="profile-name">Shakthivishwa</h1>
+                    <p class="profile-title">Web Developer</p>
+                    <p class="description">Passionate web developer skilled in front-end technologies (HTML, CSS, JavaScript) and backend development (Python, SQL). Focused on solving complex problems and creating efficient, scalable web applications, while continuously learning and staying updated with the latest trends.</p>
+                    <a class="download-btn" id="downloadBtn">Download Resume</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 1 Section -->
+        <div class="group1">
+            <div class="skills">
+                <h3 class="tittle">Expertise</h3>
+                <ul class="skill-list">
+                    <li>Html & CSS</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Java</li>
+                    <li>Git & Github</li>
+                    <li>Communication</li>
+                </ul>
+            </div>
+            <div class="ref">
+                <h3 class="tittle">Education</h3>
+                <div class="ref-item">
+                    <h4 class="ref-name">10th</h4>
+                    <p>Sri Vidya Mandir Higher Secondary School, Kondalampatty, Salem - 636010</p>
+                </div>
+                <div class="ref-item">
+                    <h4 class="ref-name">+2</h4>
+                    <p>Sri Vidya Mandir Higher Secondary School, Meiyanur Main Road, Salem - 636003</p>
+                </div>
+            </div>
+            <div class="internship">
+                <h3 class="tittle">Internship</h3>
+                <div class="ref-item">
+                    <h4 class="ref-name">United IT and CAD Divisions</h4>
+                    <p>Attended a 15-day internship at United IT and CAD Divisions, Salem - 636010</p>
+                    <ul class="skill-list">
+                        <li>Learnt about Networking</li>
+                        <li>Learnt Python Basics</li>
+                        <li>Learnt about Cryptography</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 2 Section -->
+        <div class="group2">
+            <div class="skills">
+                <h3 class="tittle">Courses</h3>
+                <ul class="skill-list">
+                    <li>Html & CSS</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                    <li>C & C++</li>
+                    <li>Java Programming</li>
+                    <li>Blockchain Technology</li>
+                    <li>Matlab Fundamentals</li>
+                    <li>UI Path</li>
+                </ul>
+            </div>
+            <div class="skills">
+                <h3 class="tittle">Certifications</h3>
+                <ul class="skill-list">
+                    <li>Coursera</li>
+                    <li>Digilabs</li>
+                    <li>Matlab</li>
+                    <li>UI Path</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3 class="tittle">Projects</h3>
+                <div class="ref-item">
+                    <h4 class="ref-name">35+ Projects</h4>
+                    <p>I have done 35+ projects using Html, CSS, and Javascript by learning new things and implementing them. To check them, visit my portfolio: <a href="https://shakthimsv.github.io/Portfolio" class="download-btn">View My Portfolio</a></p>
+                </div>
+            </div>
+            <div class="declaration">
+                <h3 class="tittle">Declaration</h3>
+                <div class="ref-item">
+                    <p>I hereby declare that all the given information is true to the best of my knowledge.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Group 3 Section -->
+        <div class="group3">
+            <div class="contact">
+                <h3 class="tittle">Contact</h3>
+                <div class="contact-item">
+                    <p>Salem, Tamilnadu</p>
+                    <p>+91 6382727093</p>
+                    <p>shakthivishwa.07@gmail.com</p>
+                </div>
+            </div>
+            <div class="social">
+                <h3 class="tittle">Socials</h3>
+                <a href="https://github.com/shakthimsv" target="_blank" class="social-item">
+                    <i data-feather="github"></i> <span>Github</span>
+                </a>
+                <a href="https://www.linkedin.com/in/shakthivishwa-m-994225321/" target="_blank" class="social-item">
+                    <i data-feather="linkedin"></i> <span>Linkedin</span>
+                </a>
+                <a href="https://www.instagram.com/mr.thalaivar_5" target="_blank" class="social-item">
+                    <i data-feather="instagram"></i> <span>Instagram</span>
+                </a>
+                <a href="https://www.hackerrank.com/profile/shakthivishwa_07" target="_blank" class="social-item">
+                    <i data-feather="code"></i> <span>Hacker Rank</span>
+                </a>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Initialize Feather icons -->
+    <script>
+        feather.replace();
+
+        // JavaScript to generate PDF on button click
+        document.getElementById('downloadBtn').addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+
+            // First, capture the content of the page using html2canvas
+            html2canvas(document.querySelector('.container')).then(canvas => {
+                const doc = new jsPDF();
+                
+                // Adjust for mobile screens - scale the image to fit the page
+                const imgData = canvas.toDataURL('image/png');
+                const pageWidth = doc.internal.pageSize.getWidth();
+                const pageHeight = doc.internal.pageSize.getHeight();
+                const imgWidth = pageWidth;
+                const imgHeight = (canvas.height * pageWidth) / canvas.width;
+
+                // Add the image to the PDF
+                doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);  // Adjust the size for mobile
+                
+                // Save the PDF
+                doc.save('Shakthivishwa_Resume.pdf');
+            });
+        });
+    </script>
+</body>
+</html>
